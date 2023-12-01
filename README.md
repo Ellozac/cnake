@@ -12,3 +12,4 @@ To compile
 ```bash
 gcc main.c -o cnake
 ```
+only linux and windows are currently supported.
