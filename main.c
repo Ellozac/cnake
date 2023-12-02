@@ -24,10 +24,15 @@ int main() {
     int arena[2];
     arena[0] = 56;
     arena[1] = 16;
+
+    int length = 1;
+    int* snakePosX = (int *)malloc(sizeof(int) * length);
+    int* snakePosY = (int *)malloc(sizeof(int) * length);
     
-    int snakePosX, snakePosY;
-    snakePosX = arena[0] / 2;
-    snakePosY = arena[1] / 2;
+    snakePosX[0] = arena[0] / 2;
+    snakePosY[0] = arena[1] / 2;
+
+
 
     int gameState = 1;
     while (gameState) {
@@ -55,7 +60,7 @@ int main() {
         for (int i = 0; i < arena[1]; i++) {
             printf("\n");
             for (int k = 0; k < arena[0]; k++) {
-                if (snakeHead)
+
                 if (k == 0 || k == arena[0] - 1) 
                 {
                     printf("%c", arenaBorder);
