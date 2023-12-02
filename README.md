@@ -1,5 +1,6 @@
 # cnake
-https://github.com/ellozac/cnake/actions/workflows/c-cpp.yml/badge.svg
+
+![Compile Checks](https://github.com/ellozac/cnake/actions/workflows/c-cpp.yml/badge.svg)
 
 Simple Snake game made in C
 
