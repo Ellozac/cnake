@@ -1,6 +1,6 @@
 # cnake
 
-
+https://github.com/Ellozac/cnake/blob/main/.github/workflows/c-cpp.yml
 Simple Snake game made in C
 
 
