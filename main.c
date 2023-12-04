@@ -15,7 +15,7 @@ int main() {
         os = 2;
     #endif
 
-
+    bool bodyCheck = false;
     // characters/assets used to display the snake and apple and border
     char snakeHead = '0';
     char snakeBody = 'o';
@@ -26,7 +26,7 @@ int main() {
     arena[0] = 56;
     arena[1] = 16;
     // initial length of snake
-    int length = 1;
+    int length = 7;
     // dynamic memory allocation for snake position x and y in Heap
     int* snakePosX = (int *)malloc(sizeof(int) * length);
     int* snakePosY = (int *)malloc(sizeof(int) * length);
@@ -62,17 +62,19 @@ int main() {
         }
         for (int i = 0; i < arena[1]; i++) {
             printf("\n");
-            
+            bodyCheck = false; 
             for (int k = 0; k < arena[0]; k++) {
                 // logic for what character to output to console
                 if (snakePosX[0] == k && snakePosY[0] == i) {
                     printf("%c", snakeHead);
                     continue;
                 };
-                for (int j = 1; j <= length; j++) if (snakePosX[j] == k && snakePosY[j] == k) {
+                for (int j = 1; j <= length; j++) if (snakePosX[j] == i && snakePosY[j] == k) {
                     printf("%c", snakeBody);
-
+                    bodyCheck = true;
+                    break;
                 }
+                if (bodyCheck) continue;
                 else if (k == 0 || k == arena[0] - 1) printf("%c", arenaBorder);
                 else printf(" ");
             }
