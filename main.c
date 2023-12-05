@@ -35,7 +35,8 @@ int main() {
     // set snake position to center of screen for start of game
     snakePosX[0] = arena[0] / 2;
     snakePosY[0] = arena[1] / 2;
-
+    snakePosY[1] = 6;
+    snakePosX[1] = 6;
     // starting the game, Whilst gameState is 1 the game is running if 0 game stops 
     int gameState = 1;
     while (gameState) {
@@ -69,10 +70,13 @@ int main() {
                     printf("%c", snakeHead);
                     continue;
                 };
-                for (int j = 1; j <= length; j++) if (snakePosX[j] == i && snakePosY[j] == k) {
-                    printf("%c", snakeBody);
-                    bodyCheck = true;
-                    break;
+                // logic for printing snakeBody
+                for (int j = 1; j <= length; j++) {
+                    if ((snakePosX[j] == i && snakePosY[j] == k) && (snakePosX[j] && snakePosY[j])) {
+                        printf("%c", snakeBody);
+                        bodyCheck = true;
+                        break;
+                    }
                 }
                 if (bodyCheck) continue;
                 else if (k == 0 || k == arena[0] - 1) printf("%c", arenaBorder);
