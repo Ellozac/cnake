@@ -26,7 +26,7 @@ int main() {
     arena[0] = 56;
     arena[1] = 16;
     // initial length of snake
-    int length = 7;
+    int length = 1;
     // dynamic memory allocation for snake position x and y in Heap
     int* snakePosX = (int *)malloc(sizeof(int) * length);
     int* snakePosY = (int *)malloc(sizeof(int) * length);
@@ -35,8 +35,6 @@ int main() {
     // set snake position to center of screen for start of game
     snakePosX[0] = arena[0] / 2;
     snakePosY[0] = arena[1] / 2;
-    snakePosY[1] = 6;
-    snakePosX[1] = 6;
     // starting the game, Whilst gameState is 1 the game is running if 0 game stops 
     int gameState = 1;
     while (gameState) {
